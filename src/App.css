@@ -48,8 +48,35 @@
 }
 
 .Props-example{
-  color: green;
+  color: white;
   font-size: 12px;
   padding: 10px;
 
+
+}
+
+.Message-css{
+  border: 1px solid white ;
+  margin: 10px;
+  padding: 20px;
+}
+
+.App-form{
+  border: 1px solid wheat;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.App-form-input{
+  padding: 10px;
+  outline:none;
+}
+
+.App-form-button{
+  padding: 5px;
+  text-transform: uppercase;
+  color: white;
+  background-color: cornflowerblue;
+  border: none;
 }
