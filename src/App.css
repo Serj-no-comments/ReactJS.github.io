@@ -1,5 +1,25 @@
+.container{
+  width: 1000px;
+  margin: 0 auto;
+}
+
 .App {
-  text-align: center;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.app-sideBar{
+  color: dodgerblue;
+  border: 1px solid white;
+  width: 50%;
+}
+.Mui-selected{
+  border: 1px solid white !important;
+}
+
+.app-main{
+  width: 50%;
 }
 
 .App-logo {
@@ -69,9 +89,12 @@
 }
 
 .App-form-input{
-  padding: 10px;
-  outline:none;
+  border:2px solid orange;
+  background-color: white;
 }
+
+
+
 
 .App-form-button{
   padding: 5px;

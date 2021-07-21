@@ -1,68 +1,52 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
+import TextField from "@material-ui/core/TextField";
+import {Button} from "@material-ui/core";
+import {createTheme,ThemeProvider} from "@material-ui/core";
+import createPalette from "@material-ui/core/styles/createPalette";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Chat from "../src/Cart/ChatItem";
+import {List,ListItem} from "@material-ui/core";
 
-const AUTHOR={
-    BOT:'Bot',
-    ME:'Me'
 
-}
-
-function Message(props){
-    return <p className="Props-example"> {props.author} :{props.text} </p>
-}
 
 function App() {
 
-    const [messageList,setMessageList]=React.useState([])
-    const [inputValue,setInputValue]=React.useState("")
+    const [chats, setChats] = React.useState([
+        { id: 'chat1', name: 'Чат 1' },
+        { id: 'chat2', name: 'Чат 2' },
+        { id: 'chat3', name: 'Чат 3' },
+    ])
+    const [currentChat, setCurrentChat] = React.useState(chats[0])
+    const handleChangeChat = (chat) => setCurrentChat(chat)
 
-    const handleMessageChange=(e)=>{
-        setInputValue(e.target.value)
-    }
-
-    const handleMessageSubmit=(e)=>{
-        e.preventDefault()
-        setMessageList(currentMessageList=>([...currentMessageList,{author:AUTHOR.ME,text:inputValue}]))
-        setInputValue('')
-    }
-
-    React.useEffect(()=>{
-        if(messageList.length && messageList[messageList.length-1].author ==AUTHOR.ME){
-            setTimeout(()=>{
-                setMessageList((currentMessageList)=>([...currentMessageList,{author:AUTHOR.BOT,text:"Hello"}]))
-                setInputValue('')
-            },1500)
+    const myThem=createTheme({
+        palette:{
+            background:{
+                default: "lightblue"
+            }
         }
-    })
-
-
-
+    });
 
 
   return (
-    <div className="App">
-      <header className="App-header">
+      <ThemeProvider theme={myThem}>
+          <CssBaseline/>
+          <div className="App container" >
 
-        <p className="App-header-text">
+                      <List className='app-sideBar'  subheader="Chat's list">
+                          {chats.map((chat)=> <ListItem  button key={chat.id} selected={chat.id===currentChat.id} onClick={setCurrentChat}>{chat.name}</ListItem>)}
+                      </List>
 
-           И да начнётся обучение ReactJS!
-        </p>
+                  <div className='app-main'>
+                      <Chat id={currentChat.id}/>
+                  </div>
+          </div>
+      </ThemeProvider>
 
-        <div className='Message-css'>
-
-            {messageList.map((message,index)=>(<Message key={index} text={message.text} author={message.author}/>))}
-        </div>
-          <form className='App-form' onSubmit={handleMessageSubmit}>
-              <input className='App-form-input' placeholder='write your message' onChange={handleMessageChange} value={inputValue}/>
-              <button className='App-form-button'>
-                  Send
-              </button>
-          </form>
-
-      </header>
-    </div>
   );
 }
 
