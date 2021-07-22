@@ -4,14 +4,26 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"
+import Router from "./Profilese/HomeList";
+import {createTheme, ThemeProvider} from "@material-ui/core";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
+const myThem=createTheme({
+    palette:{
+        background:{
+            default: "lightblue"
+        }
+    }
+});
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-        <App />
+        <ThemeProvider theme={myThem}>
+            <CssBaseline/>
+            <Router />
+        </ThemeProvider>
     </BrowserRouter>
-
   </React.StrictMode>,
   document.getElementById('root')
 );

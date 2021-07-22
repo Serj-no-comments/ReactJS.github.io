@@ -1,6 +1,4 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
-import {Button} from "@material-ui/core";
 import Input from "../Input/Input"
 import PropTypes from "prop-types";
 import usePrevious from "react-hooks-use-previous";
@@ -20,10 +18,10 @@ Message.propTypes={
 }
 
 Message.defaultProps={
-    id: 'asshole'
+    id: 'goodItem'
 }
 
-const Chat=(props)=>{
+const ChatItem=(props)=>{
 
     const [messageList,setMessageList]=React.useState([])
 
@@ -69,4 +67,4 @@ const Chat=(props)=>{
 
 }
 
-export default Chat
+export default ChatItem

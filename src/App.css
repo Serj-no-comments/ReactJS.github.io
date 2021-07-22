@@ -3,6 +3,15 @@
   margin: 0 auto;
 }
 
+.Header-List{
+  padding: 10px !important;
+}
+.Header-List-Item{
+  padding: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+}
 .App {
 
   display: flex;
@@ -10,10 +19,22 @@
 }
 
 .app-sideBar{
+
   color: dodgerblue;
   border: 1px solid white;
   width: 50%;
 }
+
+.app-sideBar-flex{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-Item{
+  text-decoration: none;
+  padding: 10px;
+}
+
 .Mui-selected{
   border: 1px solid white !important;
 }

@@ -1,14 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import TextField from "@material-ui/core/TextField";
-import {Button} from "@material-ui/core";
+import {Switch} from "react-router";
+import {Link} from "react-router-dom";
 import {createTheme,ThemeProvider} from "@material-ui/core";
-import createPalette from "@material-ui/core/styles/createPalette";
+
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Chat from "../src/Cart/ChatItem";
+import ChatItem from "./Cart/ChatItem";
 import {List,ListItem} from "@material-ui/core";
 
 
@@ -16,36 +14,33 @@ import {List,ListItem} from "@material-ui/core";
 function App() {
 
     const [chats, setChats] = React.useState([
-        { id: 'chat1', name: 'Чат 1' },
-        { id: 'chat2', name: 'Чат 2' },
-        { id: 'chat3', name: 'Чат 3' },
+        { id: 'chat1', name: 'Чат 1' ,to: '/chats/chat1'},
+        { id: 'chat2', name: 'Чат 2' ,to: '/chats/chat2'},
+        { id: 'chat3', name: 'Чат 3' ,to: '/chats/chat3'},
     ])
     const [currentChat, setCurrentChat] = React.useState(chats[0])
     const handleChangeChat = (chat) => setCurrentChat(chat)
 
-    const myThem=createTheme({
-        palette:{
-            background:{
-                default: "lightblue"
-            }
-        }
-    });
+
 
 
   return (
-      <ThemeProvider theme={myThem}>
-          <CssBaseline/>
+
+
           <div className="App container" >
 
                       <List className='app-sideBar'  subheader="Chat's list">
-                          {chats.map((chat)=> <ListItem  button key={chat.id} selected={chat.id===currentChat.id} onClick={setCurrentChat}>{chat.name}</ListItem>)}
+                          <div className='app-sideBar-flex'>
+                              {chats.map((chat)=> <Link className="flex-Item" button to={chat.to} key={chat.id} to={chat.to} selected={chat.id===currentChat.id} onClick={setCurrentChat}>{chat.name}</Link>)}
+                          </div>
+
                       </List>
 
-                  <div className='app-main'>
-                      <Chat id={currentChat.id}/>
-                  </div>
+                  {/*<div className='app-main'>*/}
+                  {/*    <ChatItem id={currentChat.id}/>*/}
+                  {/*</div>*/}
           </div>
-      </ThemeProvider>
+
 
   );
 }
