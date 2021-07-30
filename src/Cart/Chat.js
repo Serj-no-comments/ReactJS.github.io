@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory, useLocation, useParams, useRouteMatch } from 'react-router'
 import App from "../App";
 import ChatItem from "./ChatItem";
-
+import Input from "../Input/Input";
 function Chat () {
 
 

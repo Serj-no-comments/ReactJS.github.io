@@ -27,11 +27,11 @@ export default function Router() {
 
             <Route exact path="/chats" component={App}  />
 
-            <Route path="/chat/chat1" render={()=><Chat/> }/>
+            <Route path="/chat/:chatId" component={Chat} />
 
-            <Route path="/chat/chat2" render={()=><Chat/> }/>
+            {/*<Route path="/chat/chat2" component={Chat} />*/}
 
-            <Route path="/chat/chat2" render={()=><Chat/> }/>
+            {/*<Route path="/chat/chat2" component={Chat}/>*/}
 
             <Route path="/profile" exact render={()=><p>Profile page</p>} />
 
