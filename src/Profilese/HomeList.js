@@ -3,7 +3,7 @@ import '../App.css'
 import {Switch,Route} from "react-router";
 import App from "../App";
 import { Link } from 'react-router-dom'
-import Chat from "../Cart/Chat";
+import ChatItem from "../Cart/ChatItem";
 
 
 
@@ -27,7 +27,7 @@ export default function Router() {
 
             <Route exact path="/chats" component={App}  />
 
-            <Route path="/chat/:chatId" component={Chat} />
+            <Route path="/chats/:chatId" component={App} />
 
             {/*<Route path="/chat/chat2" component={Chat} />*/}
 

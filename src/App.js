@@ -30,15 +30,16 @@ function App() {
           <div className="App container" >
 
                       <List className='app-sideBar'  subheader="Chat's list">
-                          <div className='app-sideBar-flex'>
-                              {chats.map((chat)=> <Link className="flex-Item" button to={chat.to} key={chat.id} to={chat.to} selected={chat.id===currentChat.id} onClick={setCurrentChat}>{chat.name}</Link>)}
+                          <div className='flex' >
+                              <div className='app-sideBar-left'>
+                                  {chats.map((chat)=> <Link className="flex-Item" button to={chat.to} key={chat.id} to={chat.to} selected={chat.id===currentChat.id} onClick={setCurrentChat}>{chat.name}</Link>)}
+                              </div>
+                              <ChatItem />
+
                           </div>
 
                       </List>
 
-                  {/*<div className='app-main'>*/}
-                  {/*    <ChatItem id={currentChat.id}/>*/}
-                  {/*</div>*/}
           </div>
 
 

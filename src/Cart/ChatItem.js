@@ -58,11 +58,18 @@ const ChatItem=(props)=>{
 
     }
 
-    return <div className="Chat">
-        <div className='Message-css'>
-            {messageList.map((message,index)=>(<Message key={index} id={message.id}  text={message.text} author={message.author}/>))}
+    const [currentChat, setCurrentChat] = React.useState([])
+    const handleChangeChat = (chat) => setCurrentChat(chat)
+
+    return <div className='app-main' id={currentChat.id}>
+        <div className="Chat">
+            <div className='Message-css'>
+                {messageList.map((message,index)=>(<Message key={index} id={message.id}  text={message.text} author={message.author}/>))}
+            </div>
+
+            <Input onSubmit={handleMessageSubmit}/>
+
         </div>
-        <Input onSubmit={handleMessageSubmit}/>
     </div>
 
 }

@@ -7,6 +7,9 @@ import {BrowserRouter} from "react-router-dom"
 import Router from "./Profilese/HomeList";
 import {createTheme, ThemeProvider} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import {Provider} from "react-redux";
+import {store} from "./Reduser/store";
+
 
 const myThem=createTheme({
     palette:{
@@ -18,12 +21,14 @@ const myThem=createTheme({
 
 ReactDOM.render(
   <React.StrictMode>
+      <Provider store={store}>
     <BrowserRouter>
         <ThemeProvider theme={myThem}>
             <CssBaseline/>
             <Router />
         </ThemeProvider>
     </BrowserRouter>
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
