@@ -1,0 +1,126 @@
+.container{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.Header-List{
+  padding: 10px !important;
+}
+.Header-List-Item{
+  padding: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+}
+.App {
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.app-sideBar{
+
+  color: dodgerblue;
+  border: 1px solid white;
+  width: 50%;
+}
+
+.app-sideBar-flex{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-Item{
+  text-decoration: none;
+  padding: 10px;
+}
+
+.Mui-selected{
+  border: 1px solid white !important;
+}
+
+.app-main{
+  width: 50%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header-text{
+  color: red;
+  text-transform: uppercase;
+  padding: 10px;
+  border: 2px solid lightyellow ;
+  border-radius: 25px;
+  box-shadow: 0 0 10px #61dafb;
+
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Props-example{
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+
+
+}
+
+.Message-css{
+  border: 1px solid white ;
+  margin: 10px;
+  padding: 20px;
+}
+
+.App-form{
+  border: 1px solid wheat;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.App-form-input{
+  border:2px solid orange;
+  background-color: white;
+}
+
+
+
+
+.App-form-button{
+  padding: 5px;
+  text-transform: uppercase;
+  color: white;
+  background-color: cornflowerblue;
+  border: none;
+}
