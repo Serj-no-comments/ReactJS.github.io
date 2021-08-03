@@ -1,6 +1,6 @@
 
 import './App.css';
-import React from 'react';
+import React,{useContext} from 'react';
 import {Switch} from "react-router";
 import {Link} from "react-router-dom";
 import {createTheme,ThemeProvider} from "@material-ui/core";
@@ -8,6 +8,9 @@ import {createTheme,ThemeProvider} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import ChatItem from "./Cart/ChatItem";
 import {List,ListItem} from "@material-ui/core";
+import {useDispatch, useSelector} from "react-redux";
+import {changeName} from "./Profilese/Action";
+import Input from "./Input/Input";
 
 
 
@@ -21,7 +24,12 @@ function App() {
     const [currentChat, setCurrentChat] = React.useState(chats[0])
     const handleChangeChat = (chat) => setCurrentChat(chat)
 
-
+    // const dispatch=useDispatch()
+    // const {name,age}=useSelector(state => state.profile)
+    //
+    // const handleNameSubmit=(newName)=>{
+    //     dispatch(changeName(newName))
+    // }
 
 
   return (
@@ -39,6 +47,18 @@ function App() {
                           </div>
 
                       </List>
+                      {/*<div className="app-date">*/}
+                      {/*    <p className='app-date-text'>*/}
+                      {/*        <b>Name: </b>*/}
+                      {/*        {name}*/}
+                      {/*    </p>*/}
+                      {/*    <p className='app-date-text'>*/}
+                      {/*        <b>Age: </b>*/}
+                      {/*        {age}*/}
+                      {/*    </p>*/}
+                      {/*    < Input onSubmit={handleNameSubmit}/>*/}
+                      {/*</div>*/}
+
 
           </div>
 

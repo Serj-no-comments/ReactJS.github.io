@@ -4,6 +4,7 @@ import {Switch,Route} from "react-router";
 import App from "../App";
 import { Link } from 'react-router-dom'
 import ChatItem from "../Cart/ChatItem";
+import Profile from "./Profile";
 
 
 
@@ -29,11 +30,7 @@ export default function Router() {
 
             <Route path="/chats/:chatId" component={App} />
 
-            {/*<Route path="/chat/chat2" component={Chat} />*/}
-
-            {/*<Route path="/chat/chat2" component={Chat}/>*/}
-
-            <Route path="/profile" exact render={()=><p>Profile page</p>} />
+            <Route path="/profile" component={Profile} />
 
             <Route path="/" render={()=><p>Home Page</p>} />
 

@@ -22,12 +22,12 @@ const myThem=createTheme({
 ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
-    <BrowserRouter>
+        <BrowserRouter>
         <ThemeProvider theme={myThem}>
             <CssBaseline/>
             <Router />
         </ThemeProvider>
-    </BrowserRouter>
+        </BrowserRouter>
       </Provider>
   </React.StrictMode>,
   document.getElementById('root')

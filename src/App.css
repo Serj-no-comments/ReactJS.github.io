@@ -126,12 +126,21 @@
 }
 
 
-
-
 .App-form-button{
   padding: 5px;
   text-transform: uppercase;
   color: white;
   background-color: cornflowerblue;
   border: none;
+}
+
+.app-date{
+  border: 1px solid wheat;
+  margin: 10px;
+  width: 50%;
+}
+.app-date-text{
+  color: aliceblue;
+  text-transform: uppercase;
+  padding: 10px;
 }

@@ -1,8 +1,10 @@
 import {combineReducers,createStore} from "redux";
+import profileReducer from "./Reduse";
 
-const rootReducer=combineReducers({
-    profile:profileReducer,
-})
+
+const rootReducer = combineReducers({
+    profile: profileReducer,
+});
 
 export const store=createStore(
     rootReducer,
