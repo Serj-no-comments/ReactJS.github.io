@@ -47,17 +47,6 @@ function App() {
                           </div>
 
                       </List>
-                      {/*<div className="app-date">*/}
-                      {/*    <p className='app-date-text'>*/}
-                      {/*        <b>Name: </b>*/}
-                      {/*        {name}*/}
-                      {/*    </p>*/}
-                      {/*    <p className='app-date-text'>*/}
-                      {/*        <b>Age: </b>*/}
-                      {/*        {age}*/}
-                      {/*    </p>*/}
-                      {/*    < Input onSubmit={handleNameSubmit}/>*/}
-                      {/*</div>*/}
 
 
           </div>

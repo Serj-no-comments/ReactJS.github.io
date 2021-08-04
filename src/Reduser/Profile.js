@@ -1,17 +1,18 @@
-import {CHANGE_NAME} from "../Profilese/Action";
+import {CHANGE_IS_ONLINE} from "../Profilese/Action";
 
 const initialState={
     name: 'Sergei',
     age: 24,
-    gender:'',
+    gender:'Male',
+    isOnline: true,
 }
 
 export default function reducer(state=initialState,action){
     switch (action.type) {
-        case CHANGE_NAME:{
+        case CHANGE_IS_ONLINE:{
             return{
                 ...state,
-                name: action.payload.name,
+                isOnline: action.payload.isOnline,
             }
         }
         default:
