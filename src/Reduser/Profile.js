@@ -1,4 +1,4 @@
-import {CHANGE_IS_ONLINE} from "../Profilese/Action";
+import {CHANGE_IS_ONLINE} from '../actions/Profile';
 
 const initialState={
     name: 'Sergei',
