@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"
-import Router from "./Profilese/HomeList";
+import Router from "./Profilese/Router";
 import {createTheme, ThemeProvider} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {Provider} from "react-redux";
-import {store} from "./Reduser/store";
+import {store} from "./Redux/store";
 
 
 const myThem=createTheme({
@@ -25,7 +25,7 @@ ReactDOM.render(
         <BrowserRouter>
         <ThemeProvider theme={myThem}>
             <CssBaseline/>
-            <Router />
+            <App />
         </ThemeProvider>
         </BrowserRouter>
       </Provider>

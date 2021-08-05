@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {changeIsOnline} from "./Action";
+import {changeIsOnline} from '../actions/Profile';
 import Input from "../Input/Input";
 import React, {useCallback} from "react";
 import {Link} from "react-router-dom";
