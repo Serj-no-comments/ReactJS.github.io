@@ -4,12 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"
-import Router from "./Profilese/Router";
 import {createTheme, ThemeProvider} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {Provider} from "react-redux";
-import {store} from "./Redux/store";
-
+import {persistor, store} from "./Redux/store";
+import { PersistGate } from 'redux-persist/integration/react'
 
 const myThem=createTheme({
     palette:{
@@ -22,12 +21,14 @@ const myThem=createTheme({
 ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
+        <PersistGate persistor={persistor}>
         <BrowserRouter>
         <ThemeProvider theme={myThem}>
             <CssBaseline/>
             <App />
         </ThemeProvider>
         </BrowserRouter>
+        </PersistGate>
       </Provider>
   </React.StrictMode>,
   document.getElementById('root')

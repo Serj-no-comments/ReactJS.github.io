@@ -1,8 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
-import {changeIsOnline} from '../actions/Profile';
-import Input from "../Input/Input";
+import { changeIsOnlineWithThunk} from '../actions/Profile';
 import React, {useCallback} from "react";
-import {Link} from "react-router-dom";
+import ProfileInfo from "./Component";
 
 export default function Profile() {
 
@@ -11,7 +10,7 @@ export default function Profile() {
 
 
     const handleOnline=(event)=>{
-        dispatch(changeIsOnline(event.target.checked))
+        dispatch(changeIsOnlineWithThunk(event.target.checked))
     }
 
     return(
@@ -24,21 +23,7 @@ export default function Profile() {
             />
             <span>Offline</span>
 
-            <p className='app-date-text'>
-                <b>Name: </b>
-                {name}
-            </p>
-
-
-
-            <p className='app-date-text'>
-                <b>Age: </b>
-                {age}
-            </p>
-            <p className='app-date-text'>
-                <b>Gender: </b>
-                {gender}
-            </p>
+            <ProfileInfo age={age} name={name} gender={gender}/>
 
 
 

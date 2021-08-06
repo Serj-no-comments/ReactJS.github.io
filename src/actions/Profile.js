@@ -6,3 +6,11 @@ export const changeIsOnline=(isOnline)=>({
         isOnline,
     },
 })
+
+export const changeIsOnlineWithThunk=(isOnline)=>{
+    return (dispatch,getState)=> {
+        setTimeout(()=>{
+            dispatch(changeIsOnline(isOnline))
+        },1000)
+    }
+}

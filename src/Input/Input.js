@@ -22,10 +22,22 @@ const Input=(props)=>{
     }
 
     return <form className='App-form' onSubmit={handleSubmit}>
-        <TextField fullWidth className='App-form-input' placeholder='Write your message' onChange={handleChange} value={inputValue}
-                   id="standard-required" label="Message" variant="outlined" autoFocus={true}/>
+        <TextField
+            fullWidth
+            className='App-form-input'
+            placeholder='Write your message'
+            onChange={handleChange}
+            value={inputValue}
+            id="standard-required"
+            label="Message"
+            variant="outlined"
+            autoFocus={true}/>
 
-        <Button className='App-form-button' variant="contained" color="primary" type="submit">Send</Button>
+        <Button
+            className='App-form-button'
+            variant="contained"
+            color="primary"
+            type="submit">Send</Button>
     </form>
 }
 

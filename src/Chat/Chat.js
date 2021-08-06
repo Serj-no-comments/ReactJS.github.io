@@ -3,7 +3,7 @@ import React from "react";
 import Input from "../Input/Input";
 import PropTypes from "prop-types";
 import {useDispatch, useSelector} from "react-redux";
-import {addMessage} from "../actions/messages";
+import {addMessage, sendMessageBot} from "../actions/messages";
 
 export const AUTHOR={
     BOT:'Bot',
@@ -38,27 +38,14 @@ const useIsChatExists=({chatId})=>{
      const dispatch=useDispatch()
 
 
-     // React.useEffect(() => {
-     //     if (
-     //         prevMessageList?.length < messageList.length &&
-     //         messageList[messageList.length - 1].author !== AUTHOR.BOT
-     //     ) {
-     //         timer.current = setTimeout(
-     //             () =>
-     //                 setMessageList((currentMessageList) => [
-     //                     ...currentMessageList,
-     //                     { author: AUTHOR.BOT, text: 'Привет' },
-     //                 ]),
-     //             1500
-     //         )
-     //     }
-     // }, [messageList, prevMessageList])
-
 
 
      const handleMessageSubmit=(newMessageText)=>{
-        dispatch(addMessage(chatId,{id:`message${Date.now()}`,author:AUTHOR.ME,text:newMessageText}))
-         // setMessageList(currentMessageList=>([...currentMessageList,{author:AUTHOR.ME,text:newMessageText}]))
+        dispatch(sendMessageBot(chatId,{
+            id:`message${Date.now()}`,
+            author:AUTHOR.ME,
+            text:newMessageText,
+        }))
 
      }
 
