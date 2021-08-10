@@ -7,7 +7,7 @@ import {BrowserRouter} from "react-router-dom"
 import {createTheme, ThemeProvider} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {Provider} from "react-redux";
-import {persistor, store} from "./Redux/store";
+import {persistor, store} from "./Reduse/store";
 import { PersistGate } from 'redux-persist/integration/react'
 
 const myThem=createTheme({

@@ -41,9 +41,15 @@
   margin: 30px;
 }
 
+.app-sideBar-head{
+  text-transform: uppercase;
+  padding: 10px;
+}
+
 .flex-Item{
   text-decoration: none;
   padding: 10px;
+  text-transform: uppercase;
 }
 
 .Mui-selected{
@@ -132,6 +138,7 @@
   color: white;
   background-color: cornflowerblue;
   border: none;
+  margin-right: 10px;
 }
 
 .app-date{
@@ -148,4 +155,23 @@
 .button{
   text-transform: uppercase;
 
+}
+.News-head{
+  color: rgba(67,102,118,0.86);
+  text-transform: uppercase;
+}
+
+.List {
+  border: 2px solid white;
+  box-shadow: 0 5px 20px rgba(10, 49, 118, 0.86);
+  color: white;
+  background: rgba(67,102,118,0.86);
+}
+
+.List-Item{
+  margin: 0 auto;
+}
+
+.List-Item-Text{
+  text-transform: uppercase;
 }

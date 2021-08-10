@@ -17,6 +17,7 @@ function App() {
                    <Link to="/profile" className="Header-List-Item">
                        Profile
                    </Link>
+                    <Link to='/news' className="Header-List-Item">news</Link>
                </div>
               <Router/>
           </div>

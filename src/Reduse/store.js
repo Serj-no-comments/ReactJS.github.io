@@ -1,10 +1,11 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import profileReducer from "./Profile";
-import chatsReducer from '../Redux/Chats';
-import messagesReducer from '../Redux/Messages';
+import chatsReducer from './/Chats';
+import messagesReducer from './/Messages';
 import thunk from "redux-thunk";
 import storage from 'redux-persist/lib/storage'
 import { persistReducer, persistStore } from 'redux-persist'
+import newsReducer from "./news";
 
 
 const persistConfig = {
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     profile: profileReducer,
     chats: chatsReducer,
     messages: messagesReducer,
+    news:newsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

@@ -6,22 +6,6 @@ import App from "../App";
 function Home(props) {
     const { chats, currentChat,onCurrentChatChange}=props
 
-
-    // const handleAddChat=(chatName)=>{
-    //     setChats((currentChats)=>[
-    //         ...currentChats,
-    //         {name:chatName,id:`chat${Date.now()}`},
-    //     ])
-    // }
-    //
-    // const handleRemoveChat=(chatId)=>{
-    //     setChats((currentChats)=>
-    //         currentChats.filter((chat)=>chat.id !==chatId)
-    //     )
-    // }
-
-
-
     return (
         <div className="App container" >
             <List className='app-sideBar'  subheader="Chat's list">

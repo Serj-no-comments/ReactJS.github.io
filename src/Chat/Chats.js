@@ -32,7 +32,7 @@ export default function Chats(props) {
 
     return (
         <div className="chats">
-            <List className='app-sideBar'  subheader={<p>Chat's list</p>}>
+            <List className='app-sideBar'  subheader={<p className='app-sideBar-head'>Chat's list</p>}>
                 <div className='flex' >
                     <div className='app-sideBar-left'>
                         {Object.values(chats).map((chat)=>
@@ -44,7 +44,7 @@ export default function Chats(props) {
                                       onClick={()=>handleChatLinkClick(chat)}>
                                     {chat.name}
                                 </Link>
-                                <button className='button' onClick={()=>handleRemoveChat(chat.id)}>
+                                <button className='App-form-button' onClick={()=>handleRemoveChat(chat.id)}>
                                     Remove
                                 </button>
                             </div>)}

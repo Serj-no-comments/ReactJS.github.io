@@ -4,6 +4,7 @@ import {Switch,Route} from "react-router";
 import Profile from "./Profile";
 import Chat from "../Chat/Chat";
 import Chats from "../Chat/Chats";
+import News from "../News";
 
 export default function Router() {
     return(
@@ -16,9 +17,8 @@ export default function Router() {
                 />}  />
 
             <Route path="/profile" component={Profile} />
-
+            <Route path='/news' component={News}/>
             <Route path="/" render={()=><p>Home page</p>} />
-
             <Route>
                 <p>404: not found</p>
             </Route>
