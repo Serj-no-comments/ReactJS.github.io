@@ -139,6 +139,7 @@
   background-color: cornflowerblue;
   border: none;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .app-date{

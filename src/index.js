@@ -8,7 +8,8 @@ import {createTheme, ThemeProvider} from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {Provider} from "react-redux";
 import {persistor, store} from "./Reduse/store";
-import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from 'redux-persist/integration/react';
+import './services/firebase';
 
 const myThem=createTheme({
     palette:{

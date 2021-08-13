@@ -3,7 +3,8 @@ import React from "react";
 import Input from "../Input/Input";
 import PropTypes from "prop-types";
 import {useDispatch, useSelector} from "react-redux";
-import { sendMessageBot} from "../actions/messages";
+import {sendMessageBot, subscribeOnMessagesChanging} from "../actions/messages";
+import firebase from "firebase";
 
 export const AUTHOR={
     BOT:'Bot',
@@ -29,15 +30,24 @@ const useIsChatExists=({chatId})=>{
 }
 
  const Chat=(props)=>{
-
-    const {chatId}=useParams()
-     const messageList=useSelector(state => state.messages[chatId]||[])
      const dispatch=useDispatch()
 
+    const {chatId}=useParams()
+
+     const [messageList,setMessageList]=React.useState([])
+     // const messageList=useSelector(state => state.messages[chatId]||[])
+     // const dispatch=useDispatch()
 
 
+
+     React.useEffect(()=>{
+            dispatch(subscribeOnMessagesChanging(chatId))
+
+     },[])
 
      const handleMessageSubmit=(newMessageText)=>{
+
+
         dispatch(sendMessageBot(chatId,{
             id:`message${Date.now()}`,
             author:AUTHOR.ME,
